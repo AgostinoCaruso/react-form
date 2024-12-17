@@ -1,7 +1,12 @@
-body{
+body {
   background-color: grey !important;
 
 }
-.myCard{
+
+.myCard {
   padding: 0 !important;
+}
+
+.myTextCard {
+  font-size: 1.5em;
 }

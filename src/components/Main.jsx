@@ -1,8 +1,11 @@
 import articleDB from "../articleDB";
 
+import Form from "./Form";
+
 function Main() {
     return (
         <main className=" container my-5">
+            <Form />
             <div className="d-flex justify-content-center row">
                 {
                     articleDB.map((ele) => {
@@ -12,15 +15,17 @@ function Main() {
                                 <div className="card-body">
                                     <h5 className="card-title">{ele.title}</h5>
                                     <p className="card-text">{ele.author}</p>
-                                    <button className="btn btn-primary mx-3">Go somewhere</button>
-                                    <button className="btn btn-danger">Delete</button>
+                                    <div className=" myTextCard">
+                                        <span className={`badge ${ele.status === "published" ? "bg-success" : "bg-warning"} mx-2`}>{ele.status}</span>
+                                        <button className="btn btn-danger">Delete</button>
+                                    </div>
                                 </div>
                             </div>
                         )
                     })
                 }
             </div>
-        </main>
+        </main >
     );
 }
 
